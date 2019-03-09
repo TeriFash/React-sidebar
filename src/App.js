@@ -1,28 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import SideMenu from './components/SideMenu';
+import MenuList from './data/MenuItems';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.toggleClass = this.toggleClass.bind(this);
+        this.state = {
+            active: false,
+        };
+    }
+
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState });
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <nav className={`Slide-menu ${this.state.active ? 'isActive': null}`}>
+                    <SideMenu list={MenuList}/>
+                    <button onClick={this.toggleClass} className={`menu-btn ${this.state.active ? 'is-active': null}`} type="button" aria-label="Menu" aria-controls="navigation">
+                        <span className="menu-btn__block">
+                            <span className="menu-btn__inner"></span>
+                        </span>
+                    </button>
+                </nav>
+            </div>
+        );
+    }
 }
+
 
 export default App;

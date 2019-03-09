@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -31,3 +31,139 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Menu decorate */
+
+.Slide-menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  top: 0;
+  left: -250px;
+  z-index: 20;
+  background-color: #424a57;
+  transition: .3s all ease-in-out;
+}
+.Slide-menu button {
+  outline: none;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 250px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  transition: .3s all ease-in-out;
+  border: none;
+  /*background-color: #424a57;*/
+  font-size: 22px;
+}
+
+.Slide-menu.isActive {
+  left: 0px;
+}
+.Slide-menu.isActive button {
+  left: 250px;
+}
+
+.Slide-menu button:hover {
+
+}
+.Slide-menu ul {
+  padding: 0;
+
+  list-style: none;
+  color: #fff;
+}
+.Slide-menu ul li {
+  padding: 0 30px;
+  min-height: 40px;
+  line-height: 40px;
+  transition: .3s all ease-in-out;
+}
+.Slide-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.Slide-menu ul li:hover {
+  background-color: #32393f;
+}
+
+/* Button style */
+
+.menu-btn {
+  padding: 5px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font-size: 0;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+.menu-btn .menu-btn__inner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.menu-btn .menu-btn__inner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+.menu-btn .menu-btn__inner::after {
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.menu-btn.is-active .menu-btn__inner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.menu-btn.is-active .menu-btn__inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+.menu-btn.is-active .menu-btn__inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.menu-btn__block {
+  width: 36px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+}
+
+.menu-btn__inner {
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu-btn__inner, .menu-btn__inner::before, .menu-btn__inner::after {
+  width: 36px;
+  height: 3px;
+  background-color: #424a57;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+.menu-btn__inner::before, .menu-btn__inner::after {
+  content: "";
+  display: block;
+}
+.menu-btn__inner::before {
+  top: -11px;
+}
+.menu-btn__inner::after {
+  bottom: -11px;
+}
+
