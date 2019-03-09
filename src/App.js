@@ -20,11 +20,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <nav className={`Slide-menu ${this.state.active ? 'isActive': null}`}>
+                <nav className={`Slide-menu ${this.state.active ? 'is-active': null}`}>
                     <SideMenu list={MenuList}/>
-                    <button onClick={this.toggleClass} className={`menu-btn ${this.state.active ? 'is-active': null}`} type="button" aria-label="Menu" aria-controls="navigation">
-                        <span className="menu-btn__block">
-                            <span className="menu-btn__inner"></span>
+                    <button onClick={this.toggleClass} className={`Menu-btn ${this.state.active ? 'is-active': null}`} type="button" aria-label="Menu" aria-controls="navigation">
+                        <span className="Menu-btn__block">
+                            <span className="Menu-btn__inner"></span>
                         </span>
                     </button>
                 </nav>
