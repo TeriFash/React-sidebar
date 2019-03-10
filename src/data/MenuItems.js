@@ -1,5 +1,9 @@
 const MenuList = [
-    'Home', 'About', 'Contacts', 'Portfolio', 'Subscrible', 'Terms of conditions'
+    'Home',
+    'About',
+    'Services',
+    'Projects',
+    'Contacts'
 ];
 
 export default MenuList;
