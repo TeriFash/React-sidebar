@@ -27,24 +27,25 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <nav className={`Slide-menu ${this.state.active ? 'is-active': null}`}>
-                    <SideMenu list={MenuList}/>
-                    <button onClick={this.toggleClass} className={`Menu-btn ${this.state.active ? 'is-active': null}`} type="button" aria-label="Menu" aria-controls="navigation">
-                        <span className="Menu-btn__block">
-                            <span className="Menu-btn__inner"></span>
-                        </span>
-                    </button>
-                </nav>
-
                 <BrowserRouter>
-                    <Switch>
-                        <Route path="/" component={Home} exact />
-                        <Route path="/about" component={About} />
-                        <Route path="/services" component={Services} />
-                        <Route path="/projects" component={Projects} />
-                        <Route path="/contacts" component={Contacts} />
-                        <Route component={Error} />
-                    </Switch>
+                    <div>
+                        <nav className={`Slide-menu ${this.state.active ? 'is-active': null}`}>
+                            <SideMenu list={MenuList}/>
+                            <button onClick={this.toggleClass} className={`Menu-btn ${this.state.active ? 'is-active': null}`} type="button" aria-label="Menu" aria-controls="navigation">
+                            <span className="Menu-btn__block">
+                                <span className="Menu-btn__inner"></span>
+                            </span>
+                            </button>
+                        </nav>
+                        <Switch>
+                            <Route path="/" component={Home} exact />
+                            <Route path="/about" component={About} />
+                            <Route path="/services" component={Services} />
+                            <Route path="/projects" component={Projects} />
+                            <Route path="/contacts" component={Contacts} />
+                            <Route component={Error} />
+                        </Switch>
+                    </div>
                 </BrowserRouter>
             </div>
         );

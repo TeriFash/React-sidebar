@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from "react-router-dom";
 
 class List extends Component {
     constructor(props) {
@@ -15,9 +16,10 @@ class List extends Component {
             <ul>
                 {this.state.list.map((item) =>
                     <li
-                        key={item.toString()}
+                        key={item.name.toString()}
                     >
-                        {item}
+                        <NavLink to={item.path}>{item.name}</NavLink>
+
                     </li>
                 )}
             </ul>
