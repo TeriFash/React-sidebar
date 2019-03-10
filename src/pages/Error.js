@@ -10,7 +10,7 @@ class Error extends Component {
 
     render() {
         return (
-            <div className="Error-page">
+            <div className="Page Error-page">
                 <h1>This is Error page 404</h1>
                 <p>Please go <NavLink to="/">Home</NavLink></p>
             </div>

@@ -1,9 +1,19 @@
 #root {
   width: 100%;
   height: 100%;
+  overflow: hidden;
   h1 {
     text-align: center;
   }
+}
+
+.Page {
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  overflow: hidden;
 }
 
 .Error-page {
@@ -144,4 +154,61 @@
 .Menu-btn__inner::after {
   bottom: -11px;
 }
+
+// Page animation
+
+.fade-enter,
+.fade-appear {
+  opacity: 0;
+  left: 100px;
+  z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: all 600ms linear;
+}
+
+
+.fade-enter.fade-enter-active {
+  left: 0;
+  opacity: 1;
+  transition: all 600ms linear ;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  left: 100px;
+  opacity: 0;
+  transition: all 200ms linear;
+}
+/*
+.fade-appear,
+.fade-enter {
+  left: 100px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  left: 0;
+  transition: all 600ms linear 300ms;
+}
+
+.fade-exit {
+  left: 0;
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  left: 100px;
+  transition: all linear 300ms;
+}
+*/
 
