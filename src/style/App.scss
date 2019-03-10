@@ -2,12 +2,21 @@
   width: 100%;
   height: 100%;
   h1 {
-    text-align: center;
+
   }
 }
 
 .Error-page {
-  color: #ff977c;
+  text-align: center;
+  h1 {
+    color: #ff977c;
+  }
+  p {
+    a {
+      color: #ff977c;
+      text-transform: uppercase;
+    }
+  }
 }
 
 /* Menu decorate */

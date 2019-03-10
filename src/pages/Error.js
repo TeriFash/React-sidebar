@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from "react-router-dom";
 
 class Error extends Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class Error extends Component {
 
     render() {
         return (
-            <h1 className="Error-page">This is Error page 404</h1>
+            <div className="Error-page">
+                <h1>This is Error page 404</h1>
+                <p>Please go <NavLink to="/">Home</NavLink></p>
+            </div>
         );
     }
 }
