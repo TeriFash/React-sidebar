@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import './style/App.scss';
 import SideMenu from './components/SideMenu';
 import MenuList from './data/MenuItems';
 

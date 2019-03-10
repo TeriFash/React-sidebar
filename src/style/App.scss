@@ -29,30 +29,27 @@
   z-index: 20;
   background-color: #424a57;
   transition: .3s all ease-in-out;
-}
-
-.Slide-menu.is-active {
-  left: 0px;
-}
-
-.Slide-menu ul {
-  padding: 0;
-
-  list-style: none;
-  color: #fff;
-}
-.Slide-menu ul li {
-  padding: 0 30px;
-  min-height: 40px;
-  line-height: 40px;
-  transition: .3s all ease-in-out;
-}
-.Slide-menu ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-.Slide-menu ul li:hover {
-  background-color: #32393f;
+  &.is-active {
+    left: 0px;
+  }
+  & ul {
+    padding: 0;
+    list-style: none;
+    color: #fff;
+    li {
+      padding: 0 30px;
+      min-height: 40px;
+      line-height: 40px;
+      transition: .3s all ease-in-out;
+      &:hover {
+        background-color: #32393f;
+      }
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
 }
 
 /* Button style */
@@ -80,36 +77,36 @@
   line-height: 40px;
   text-align: center;
   border: none;
+  &.is-active {
+    left: 250px;
+    .Menu-btn__inner {
+      transform: rotate(45deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      &:before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+      }
+      &:after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    }
+  }
+  &__inner {
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    &:before {
+      transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+    }
+    &:after {
+      transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+}
 
-}
-.Menu-btn.is-active {
-  left: 250px;
-}
-.Menu-btn .Menu-btn__inner {
-  transition-duration: 0.075s;
-  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.Menu-btn .Menu-btn__inner::before {
-  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
-}
-.menu-btn .Menu-btn__inner::after {
-  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-.Menu-btn.is-active .Menu-btn__inner {
-  transform: rotate(45deg);
-  transition-delay: 0.12s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-.Menu-btn.is-active .Menu-btn__inner::before {
-  top: 0;
-  opacity: 0;
-  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-}
-.Menu-btn.is-active .Menu-btn__inner::after {
-  bottom: 0;
-  transform: rotate(-90deg);
-  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
 
 .Menu-btn__block {
   width: 36px;
