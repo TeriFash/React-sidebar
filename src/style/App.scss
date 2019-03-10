@@ -1,8 +1,8 @@
-.App {
+#root {
   width: 100%;
   height: 100%;
   h1 {
-
+    text-align: center;
   }
 }
 
@@ -33,6 +33,24 @@
   transition: .3s all ease-in-out;
   &.is-active {
     left: 0px;
+    .Menu-btn {
+      left: 250px;
+      .Menu-btn__inner {
+        transform: rotate(45deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        &:before {
+          top: 0;
+          opacity: 0;
+          transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+        }
+        &:after {
+          bottom: 0;
+          transform: rotate(-90deg);
+          transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+      }
+    }
   }
   & ul {
     padding: 0;
@@ -48,6 +66,9 @@
       }
     }
     a {
+      display: block;
+      height: auto;
+      width: 100%;
       color: #fff;
       text-decoration: none;
     }
@@ -79,24 +100,6 @@
   line-height: 40px;
   text-align: center;
   border: none;
-  &.is-active {
-    left: 250px;
-    .Menu-btn__inner {
-      transform: rotate(45deg);
-      transition-delay: 0.12s;
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      &:before {
-        top: 0;
-        opacity: 0;
-        transition: top 0.075s ease, opacity 0.075s 0.12s ease;
-      }
-      &:after {
-        bottom: 0;
-        transform: rotate(-90deg);
-        transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-    }
-  }
   &__inner {
     transition-duration: 0.075s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
