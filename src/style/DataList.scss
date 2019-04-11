@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
+.DataList {
+
+  font-family: 'Work Sans', sans-serif;
+
+  .container ul {
+    padding: 0;
+    background: #fff;
+    li {
+      min-width: 112px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      transition: all .2s ease;
+      margin: 3px 0;
+      padding: 0 15px;
+      list-style: none;
+      color: #282c34;
+      &:hover {
+        background: #424a57;
+      }
+      span {
+        color: #b5b5b5;
+        font-size: 14px;
+      }
+    }
+  }
+
+  table {
+    margin: 0 auto;
+    border: 1px solid #282c34;
+    border-collapse: collapse;
+    tr {
+
+      background: #fff;
+      transition: all .2s ease;
+      td {
+        min-height: 40px;
+        transition: all .3s ease-in-out;
+        border: 1px solid #b7b7b7;
+        padding: 10px 15px;
+        color: #282c34;
+      }
+      &:nth-child(odd) {
+        background: rgba(92, 203, 234, .1);
+        transition: all .2s ease;
+      }
+      &:hover {
+        background: #424a57;
+      }
+      &:hover td {
+        color: #fff;
+      }
+    }
+  }
+}

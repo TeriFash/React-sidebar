@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import {Route, Switch} from "react-router-dom";
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 import SideMenu from './components/SideMenu';
 import MenuList from './data/MenuItems';
@@ -19,12 +19,11 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
-                <div>
-                    <nav>
-                        <SideMenu list={MenuList}/>
-                    </nav>
-                    <main>
+            <div>
+                <nav>
+                    <SideMenu list={MenuList}/>
+                </nav>
+                <main>
                     <Route render={({location}) => (
                         <TransitionGroup
                         >
@@ -34,21 +33,20 @@ class App extends Component {
                                 apper={true}
                                 classNames='fade'
                                 timeout={600}
-                                >
+                            >
                                 <Switch location={location}>
-                                    <Route path="/" component={Home} exact />
-                                    <Route path="/about" component={About} />
-                                    <Route path="/services" component={Services} />
-                                    <Route path="/projects" component={Projects} />
-                                    <Route path="/contacts" component={Contacts} />
-                                    <Route component={Error} />
+                                    <Route path="/" component={Home} exact/>
+                                    <Route path="/about" component={About}/>
+                                    <Route path="/services" component={Services}/>
+                                    <Route path="/projects" component={Projects}/>
+                                    <Route path="/contacts" component={Contacts}/>
+                                    <Route component={Error}/>
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>
-                    )} />
+                    )}/>
                 </main>
-                </div>
-            </BrowserRouter>
+            </div>
         );
     }
 }

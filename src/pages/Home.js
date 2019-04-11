@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import DataList from "../components/DataList";
+
+const dataUrl = 'https://raw.githubusercontent.com/azat-co/react-quickly/master/ch05/users/real-user-data.json';
+
 
 class Home extends Component {
     constructor(props) {
@@ -10,7 +14,7 @@ class Home extends Component {
     render() {
         return (
             <div className="Page">
-                <h1>This is Home page</h1>
+                <DataList data-url={dataUrl} title={'User data list'}/>
             </div>
         );
     }
